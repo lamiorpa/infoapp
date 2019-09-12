@@ -9,6 +9,8 @@ import { BrowserRouter } from 'react-router-dom'
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// Solution to github pages routing problem (inclusion of "basename" parameter): 
+// https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
 ReactDOM.render(
     <BrowserRouter basename={process.env.PUBLIC_URL}>
         <App />

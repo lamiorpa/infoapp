@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 
-import Lightsout from "./Lightsout";
+import Homepage from "./Homepage";
+import Lightsout from "./lights-out/Lightsout";
+import Weather from "./weather/Weather";
 
 import NotFound from './NotFound';
 
@@ -9,8 +11,9 @@ class Routes extends Component {
     render() {
         return (
             <Switch>
-                <Route exact path="/" render={() => <h1>Root directory</h1>} />
+                <Route exact path="/" render={() => <Homepage />} />
                 <Route exact path="/lights-out" render={() => <Lightsout />} />
+                <Route exact path="/weather" render={() => <Weather />} />
                 <Route render={() => <NotFound />} />
             </Switch>
         );

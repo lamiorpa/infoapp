@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import Cell from "./Cell";
 import './Board.css';
 
@@ -52,6 +53,7 @@ class Board extends Component {
             hasWon: false
         };
         this.handleCellClick = this.handleCellClick.bind(this);
+        this.handleNextboardClick = this.handleNextboardClick.bind(this);
     }
 
     // Suoritetaan constructorin toimien jälkeen boardin asettelu, ennen itse sisällön renderöimistä
@@ -61,7 +63,7 @@ class Board extends Component {
     }
 
     componentWillUnmount() {
-        console.log("tuhotaan")
+        console.log("Component unmounting...")
     }
 
 
@@ -151,9 +153,6 @@ class Board extends Component {
             return true;
         }
 
-        // win when every cell is turned off
-        // TODO: determine if the game has been won
-
         this.setState({
             board: board,
             hasWon: checkWin(board)
@@ -165,10 +164,14 @@ class Board extends Component {
      * @param {number} repeats (number of pre-made clicks before player interaction)
      */
     setBoard(repeats = 5) {
-        console.log(typeof(repeats))
         this.setBoardStage(repeats);
     }
 
+    /**
+     * Call flipCellsAround and increases number of clicks used
+     * TODO: use number of clicks to something useful
+     * @param {string} coord (e.g. "2-3", "0-1") 
+     */
     handleCellClick(coord) {
         this.flipCellsAround(coord);
         this.setState(state => {
@@ -177,6 +180,10 @@ class Board extends Component {
             }
         })
     }
+    
+    handleNextboardClick() {
+        this.props.incrBoardNmbr();
+    }
 
     /** Render game board or winning message. */
 
@@ -184,7 +191,9 @@ class Board extends Component {
         return (
             <div>
                 {this.state.hasWon ?
-                    <h2>Hih hih, voitit pelin <button onClick={() => this.setBoard(5)}>Reset</button>
+                    <h2>
+                        Voitit laudan {this.props.nrows + "x" + this.props.ncols} 
+                        <p><button onClick={this.handleNextboardClick}>Next board</button></p>
                     </h2>
                     :
                     <React.Fragment>
@@ -214,10 +223,6 @@ class Board extends Component {
 
             </div>
         );
-
-        // if the game is won, just show a winning msg & render nothing else
-
-        // TODO
 
         // make table board
 

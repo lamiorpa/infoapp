@@ -2,19 +2,13 @@ import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 
 class NavbarFancy extends Component {
+
     render() {
-        const dogLinks = this.props.dogs.map(dog => (
-            <li className='nav-item' key={dog.name}>
-                <NavLink exact to={`/dogs/${dog.name}`} className='nav-link'>
-                    {dog.name}
-                </NavLink>
-            </li>
-        ));
         return (
             <nav className='navbar navbar-expand-lg navbar-dark bg-dark'>
-                <Link className='navbar-brand' to='/'>
+                <Link className='navbar-brand' to={'/'}>
                     Info app
-        </Link>
+                </Link>
 
                 <button
                     className='navbar-toggler'
@@ -30,14 +24,18 @@ class NavbarFancy extends Component {
                 <div className='collapse navbar-collapse' id='navbarNav'>
                     <ul className='navbar-nav'>
                         <li className='nav-item'>
-                            <NavLink exact to='/' className='nav-link'>
+                            <NavLink exact to={'/'} className='nav-link'>
                                 Home
-              </NavLink>
+                            </NavLink>
                         </li>
-                        {dogLinks}
-                        <li className='nav-item' key="oof">
+                        <li className='nav-item'>
                             <NavLink exact to={`/lights-out`} className='nav-link'>
                                 Lights out
+                            </NavLink>
+                        </li>
+                        <li className='nav-item'>
+                            <NavLink exact to={`/weather`} className='nav-link'>
+                                Weather
                             </NavLink>
                         </li>
                     </ul>

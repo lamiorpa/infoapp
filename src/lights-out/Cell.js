@@ -1,17 +1,17 @@
 import React, {Component} from 'react'
-import "./Cell.css"
 
+import "./Cell.css"
 
 /** A single cell on the board.
  *
  * This has no state --- just two props:
  *
- * - flipCellsAroundMe: a function rec'd from the board which flips this
+ * - handleCellClick: a function rec'd from the board which ultimately flips this
  *      cell and the cells around of it
  *
  * - isLit: boolean, is this cell lit?
  *
- * This handles clicks --- by calling flipCellsAroundMe
+ * This handles clicks --- by calling handleCellClick
  *
  **/
 
@@ -33,7 +33,6 @@ class Cell extends Component {
         width: `${computedWidth}%`,
         paddingBottom: `${computedWidth}%`
     }
-
     return (
         <td 
         className={classes} 
