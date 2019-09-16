@@ -51,7 +51,8 @@ class Weather extends Component {
 
         if (city && country) {
 
-            const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?lang=fi&q=${city},${country}&units=metric&appid=${apiconfig.WEATHER_API_KEY}`)
+            const prefix = "https://crossorigin.me/" // enables http openweathermap content over https, temporate solution
+            const api_call = await fetch(`${prefix}https://api.openweathermap.org/data/2.5/weather?lang=fi&q=${city},${country}&units=metric&appid=${apiconfig.WEATHER_API_KEY}`)
             const response = await api_call.json();
 
             if (response.cod === 200) { // response code of delivery OK
