@@ -243,6 +243,8 @@ class Board extends Component {
         // make table board
 
         // TODO
+
+        // board
     }
 }
 

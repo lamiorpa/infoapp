@@ -24,4 +24,6 @@ class Weather extends Component {
     }
 }
 
+// weather
+
 export default Weather;
