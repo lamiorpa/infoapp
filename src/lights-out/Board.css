@@ -1,4 +1,5 @@
 .Board {
   margin: 0 auto;
   border-collapse: separate;
+  padding-bottom: 10px;
 }

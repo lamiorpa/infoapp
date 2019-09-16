@@ -7,8 +7,8 @@ class NotFound extends Component {
     }
     render() {
         return (
-            <div className="Dogs">
-                <div>Dog not found!</div>
+            <div className="NotFound">
+                <div>Target page not found!</div>
             </div>
         );
     }

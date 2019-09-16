@@ -52,9 +52,9 @@ class Lightsout extends Component {
      */
     render() {
         let renderableBoards = [
-            <Board nrows={1} ncols={3} key="hard" incrBoardNmbr={this.incrBoardNmbr} resetGame={this.resetGame} />,
-            <Board nrows={1} ncols={4} key="coded" incrBoardNmbr={this.incrBoardNmbr} resetGame={this.resetGame} />,
-            <Board nrows={1} ncols={5} key="keys" incrBoardNmbr={this.incrBoardNmbr} resetGame={this.resetGame} />
+            <Board nrows={3} ncols={3} key="hard" incrBoardNmbr={this.incrBoardNmbr} resetGame={this.resetGame} />,
+            <Board nrows={4} ncols={4} key="coded" incrBoardNmbr={this.incrBoardNmbr} resetGame={this.resetGame} />,
+            <Board nrows={5} ncols={5} key="keys" incrBoardNmbr={this.incrBoardNmbr} resetGame={this.resetGame} />
         ]
         console.log("state: " + this.state.boardNumber)
         console.log("sessionstorage: " + sessionStorage.getItem("boardNumber"))
@@ -63,7 +63,10 @@ class Lightsout extends Component {
                 {this.state.boardNumber < renderableBoards.length ?
                     renderableBoards[this.state.boardNumber]
                     :
-                    <h1>Games won, good job!</h1>
+                    <React.Fragment>
+                        <h1>Games won, good job!</h1>
+                        <button onClick={this.resetGame}>Reset game</button>
+                    </React.Fragment>
                 }
             </div>
         );

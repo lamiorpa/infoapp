@@ -1,0 +1,25 @@
+.Weather {
+    margin: auto;
+    width: 50%;
+    border: 2px solid orangered;
+    padding: 10px;
+
+    width: 400px;
+}
+
+.WeatherForm {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.WeatherForm input {
+    padding-left: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+
+    margin-bottom: 10px;
+}
+.WeatherForm button {
+    margin-bottom: 10px;
+}
