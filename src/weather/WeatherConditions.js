@@ -8,4 +8,6 @@ const Weather = (props) => {
     )
 }
 
+// weatherconditions
+
 export default Weather;
