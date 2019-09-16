@@ -23,5 +23,12 @@ npm run deploy
 
 // add your source code to git, instead of just build software
 git add .
-it commit -m "Your awesome message"
+git commit -m "Your awesome message"
 git push origin master
+
+-----
+
+dependencies:
+
+npm install --save react-router-dom bootstrap
+npm install --save jquery popper.js
