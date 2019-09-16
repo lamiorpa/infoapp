@@ -53,6 +53,8 @@ class Board extends Component {
             hasWon: false
         };
         this.handleCellClick = this.handleCellClick.bind(this);
+        this.handleResetBoardClick = this.handleResetBoardClick.bind(this);
+        this.handleResetGameClick = this.handleResetGameClick.bind(this);
         this.handleNextboardClick = this.handleNextboardClick.bind(this);
     }
 
@@ -63,7 +65,7 @@ class Board extends Component {
     }
 
     componentWillUnmount() {
-        console.log("Component unmounting...")
+        console.log("Board-component unmounting...")
     }
 
 
@@ -180,10 +182,22 @@ class Board extends Component {
             }
         })
     }
-    
+    handleResetBoardClick() {
+        this.setState({
+            board: this.constructBoard(this.props.nrows, this.props.ncols),
+            clicks: 0,
+            hasWon: false
+        }, () => {
+            this.setBoard();
+        });
+    }
     handleNextboardClick() {
         this.props.incrBoardNmbr();
     }
+    handleResetGameClick() {
+        this.props.resetGame();
+    }
+
 
     /** Render game board or winning message. */
 
@@ -192,8 +206,8 @@ class Board extends Component {
             <div>
                 {this.state.hasWon ?
                     <h2>
-                        Voitit laudan {this.props.nrows + "x" + this.props.ncols} 
-                        <p><button onClick={this.handleNextboardClick}>Next board</button></p>
+                        Voitit laudan {this.props.nrows + "x" + this.props.ncols}
+                        <button onClick={this.handleNextboardClick}>Next board</button>
                     </h2>
                     :
                     <React.Fragment>
@@ -220,6 +234,8 @@ class Board extends Component {
                         </table>
                     </React.Fragment>
                 }
+                <button onClick={this.handleResetBoardClick}>Reset board</button>
+                <button onClick={this.handleResetGameClick}>Reset game</button>
 
             </div>
         );
