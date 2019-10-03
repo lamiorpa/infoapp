@@ -11,7 +11,7 @@ import * as serviceWorker from './serviceWorker';
 
 // Solution to github pages routing problem (inclusion of "basename" parameter): 
 // https://medium.com/@Dragonza/react-router-problem-with-gh-pages-c93a5e243819
-// Hashrouter fixing the refresh 404 problem
+// Hashrouter (instead of BrowserRouter) fixing the "refresh the page for 404 error"-problem
 // https://stackoverflow.com/questions/46056414/getting-404-for-links-with-create-react-app-deployed-to-github-pages
 ReactDOM.render(
     <HashRouter basename={process.env.PUBLIC_URL}>

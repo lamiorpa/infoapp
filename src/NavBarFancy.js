@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import { NavLink, Link } from "react-router-dom";
 
+/**
+ * Navbar that utilizes bootstrap
+ */
 class NavbarFancy extends Component {
 
     render() {

@@ -5,12 +5,14 @@ import Titles from './Titles';
 import WeatherConditions from './WeatherConditions';
 
 import "./Weather.css";
-import apiconfig from '../apiconfig';
+import apiconfig from '../apiconfig'; // file containing weather API key
 
 // example api call: http://api.openweathermap.org/data/2.5/find?q=London&units=metric&appid={apiconfig.WEATHER_API_KEY}
 // inspiration: https://medium.com/@peterekeneeze/build-a-react-js-weather-app-with-stateless-functional-components-e61567004b54
 
-/** Simple app that fetches weather information from OpenWeatherMap API and displays it */
+/**
+ * Simple app that fetches weather information from OpenWeatherMap API and displays it
+ */
 class Weather extends Component {
 
     state = {

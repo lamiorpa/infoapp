@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 
-/** Main page used to display created apps*/
-
+/**
+ * Main page component, used to display "peek" boxes to components
+ * TODO: create "peek" boxes
+ */
 class Homepage extends Component {
 
     render() {

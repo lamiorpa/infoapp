@@ -7,6 +7,9 @@ import Weather from "./weather/Weather";
 
 import NotFound from './NotFound';
 
+/**
+ * Component for choosing the rendered content
+ */
 class Routes extends Component {
     render() {
         return (
